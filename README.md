@@ -3,7 +3,14 @@ TeamFour - Notary Program
 ## Install & Usage    
     
 ### To install python dependencies, follow:
-    
+
+Put service private key at ./keys/notary.key (Name *notary.key* is fixed)
+Put passphrase in ./notary.py
+
+Put your test program in ./SLAChecker_python
+Put your own pass phrase in ./SLAChecker_python
+Edit global_XXX in ./SLAChecker_python/slachecker.py
+
 ```bash
 (sudo) ./install.sh
 ```
