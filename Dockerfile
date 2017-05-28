@@ -3,9 +3,9 @@ MAINTAINER John Doe <john@do.e>
 
 #clone team4 git repository
 RUN rm -rf /home/*
-RUN apt-get update
-RUN apt-get install git
-RUN apt-get install python-pip
+RUN apt-get -y update
+RUN apt-get -y install git
+RUN apt-get -y install python-pip
 RUN pip install pythonbrew
 RUN pythonbrew_install
 RUN pythonbrew install 2.7.3
