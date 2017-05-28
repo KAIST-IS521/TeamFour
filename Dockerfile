@@ -8,7 +8,7 @@ RUN apt-get -y install git
 RUN apt-get -y install python-pip
 RUN pip install pythonbrew
 RUN pythonbrew_install
-RUN pythonbrew install 2.7.2
+RUN source "$HOME/.pythonbrew/etc/bashrc"; pythonbrew install 2.7.2
 RUN cd /home/; git clone https://github.com/KAIST-IS521/TeamFour.git
 
 RUN useradd flagupdater
@@ -21,7 +21,7 @@ RUN cd /home/TeamFour; make
 
 EXPOSE 8000
 EXPOSE 8001
-EXPOSE 24
+EXPOSE 42
 
 #start notary
 #CMD ["python /home/TeamFour/notary.py", "/home/TeamFour/keys/", "FOREGROUND"] 
