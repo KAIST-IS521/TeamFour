@@ -7,6 +7,8 @@ all: flagUpdater/flag_updater $(LAUNCHERDIR)/$(FILESDIR) $(LAUNCHERDIR)/$(BUILDD
 	mkdir -p /var/ctf/
 	chown flagupdater /var/ctf/
 	chmod 700 /var/ctf/
+	chown notary /var/log/notary/
+	chmod 700 /var/log/notary/
 
 $(LAUNCHERDIR)/$(BUILDDIR):
 	mkdir -p $@
