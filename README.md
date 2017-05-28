@@ -24,7 +24,7 @@ Edit global_XXX in ./SLAChecker_python/slachecker.py
 ### Docker Container
     Use DockerFile
     >> cd TeamFour
-    >> sudo docker -p 10.0.104.104:8000:8000 -p 10.0.104.104:8001:8001 -p 10.0.104.104:24:24 build .
+    >> sudo docker -p 10.0.104.104:8000:8000 -p 10.0.104.104:8001:8001 -p 10.0.104.104:42:42 build .
     >> sudo docker run -it [DOCKER_ID]
 
 ### Usage

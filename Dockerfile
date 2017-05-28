@@ -1,8 +1,14 @@
-FROM debian:teamfour
+FROM 32bit/debian:latest
 MAINTAINER John Doe <john@do.e>
 
 #clone team4 git repository
 RUN rm -rf /home/*
+RUN apt-get update
+RUN apt-get install git
+RUN apt-get install python-pip
+RUN pip install pythonbrew
+RUN pythonbrew_install
+RUN pythonbrew install 2.7.3
 RUN cd /home/; git clone https://github.com/KAIST-IS521/TeamFour.git
 
 RUN useradd flagupdater
