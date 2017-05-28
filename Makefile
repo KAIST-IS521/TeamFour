@@ -5,15 +5,14 @@ SRCDIR = src
 
 all: flagUpdater/flag_updater $(LAUNCHERDIR)/$(FILESDIR) $(LAUNCHERDIR)/$(BUILDDIR) $(LAUNCHERDIR)/$(SRCDIR) $(LAUNCHERDIR)/$(BUILDDIR)/launcher
 	mkdir -p /var/ctf/
-	chmod 777 /var/ctf/
-	apt-get install python-gnupg
+	chown flagupdater /var/ctf/
 
 $(LAUNCHERDIR)/$(BUILDDIR):
 	mkdir -p $@
 
 $(LAUNCHERDIR)/$(FILESDIR):
 	mkdir -p $@
-	chmod 777 $@
+	chown flagupdater $@
 
 $(LAUNCHERDIR)/$(BUILDDIR)/launcher: $(LAUNCHERDIR)/$(SRCDIR)/launcher.c $(LAUNCHERDIR)/$(BUILDDIR)
 	$(CC) -D_FILE_OFFSET_BITS=64 -lb64 -lgpgme -lassuan -lgpg-error $(LAUNCHERDIR)/$(SRCDIR)/jsmn.c -o$@ $<
