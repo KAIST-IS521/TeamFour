@@ -8,7 +8,7 @@ RUN apt-get -y install git
 RUN apt-get -y install python-pip
 RUN pip install pythonbrew
 RUN pythonbrew_install
-RUN pythonbrew install 2.7.3
+RUN pythonbrew install 2.7.2
 RUN cd /home/; git clone https://github.com/KAIST-IS521/TeamFour.git
 
 RUN useradd flagupdater
