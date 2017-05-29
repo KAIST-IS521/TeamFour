@@ -6,9 +6,9 @@ RUN rm -rf /home/*
 RUN apt-get -y update
 RUN apt-get -y install git
 RUN apt-get -y install python-pip
-RUN pip install pythonbrew
-RUN pythonbrew_install
-RUN source "$HOME/.pythonbrew/etc/bashrc"; pythonbrew install 2.7.2
+RUN wget --no-check-certificate https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tar.xz
+RUN tar xf Python-2.7.13.tar.xz
+RUN cd ./Python-2.7.13; ./configure; make; make install
 RUN cd /home/; git clone https://github.com/KAIST-IS521/TeamFour.git
 
 RUN useradd flagupdater
